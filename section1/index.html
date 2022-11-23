@@ -6,11 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@3.1.5"></script>
-    <script src="main.js"></script>
 
     <title>Vue</title>
   </head>
   <body>
-    <p>hello world</p>
+    <div id="app">
+      <!-- マスタッシュ構文 -->
+      <p>{{ message }}</p>
+      <p>{{ count }}</p>
+      <p>{{ user.lastName }}</p>
+      <p>{{ user.firstName }}</p>
+      <p>{{ user.prefecture }}</p>
+      <p>{{ colors[0] }}</p>
+
+
+      <input type="text" v-bind:value="message">
+      <p v-if="toggle">v-if</p>
+
+      <ol>
+        <li v-for="color in colors">{{ color }}</li>
+      </ol>
+
+      <p v-for="value, key in user">{{ key }}: {{value}}</p>
+
+      <button v-on:click="() => alert(message)">Button</button>
+      <button v-on:click="updateDate">PrintDate</button>
+      <p>{{ today }}</p>
+
+
+      <input type="text" v-bind:value="bindingData">
+      <input type="text" v-model="bindingData">
+      <pre>{{ bindingData }}</pre>
+
+      <hello></hello>
+      <hello />
+
+    </div>
+
+
+    <script src="main.js"></script>
   </body>
 </html>

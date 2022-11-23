@@ -8,7 +8,112 @@
     <title>Section12</title>
   </head>
   <body>
-    <div id="app">
+    <div id="app" style="margin-bottom: 100px">
+      <pre>{{ $data }}</pre>
+
+      <hr />
+
+      <p>{{ message }}</p>
+      <input type="text" v-model="message" />
+
+      <hr />
+
+      <!-- 値は表示されるが双方向バインディングされない -->
+      <textarea>{{ message }}</textarea>
+      <!-- 双方向バインディングされる -->
+      <textarea v-model="message"></textarea>
+
+      <hr />
+
+      <h2>checkbox</h2>
+      <label>
+        {{ checked }}
+        <input type="checkbox" v-model="checked" />
+      </label>
+
+      <hr />
+
+      <h2>checkboxes</h2>
+      <!--
+        複数のcheckboxの場合v-modelは同じ配列にし、
+        valueをそれぞれで定義してあげる必要がある。
+      -->
+      <label>
+        <input type="checkbox" value="red" v-model="colors" />
+        red
+      </label>
+      <label>
+        <input type="checkbox" value="green" v-model="colors" />
+        green
+      </label>
+      <label>
+        <input type="checkbox" value="blue" v-model="colors" />
+        blue
+      </label>
+      <p>{{ colors }}</p>
+
+      <hr />
+      <!-- radioボタンの値は文字列 -->
+      <h2>radio</h2>
+      <label>
+        <input type="radio" value="red" v-model="radioColor" />
+        red
+      </label>
+      <label>
+        <input type="radio" value="green" v-model="radioColor" />
+        green
+      </label>
+      <label>
+        <input type="radio" value="blue" v-model="radioColor" />
+        blue
+      </label>
+      <p>{{ radioColor }}</p>
+
+      <hr />
+      <h2 :class="selected">select</h2>
+      <p>{{ selected }}</p>
+      <select v-model="selected">
+        <option disabled value="">Please select</option>
+        <option v-for="item in items">{{ item }}</option>
+        <!-- <option>red</option>
+        <option>green</option>
+        <option>blue</option> -->
+      </select>
+
+      <hr />
+      <h2>multiple</h2>
+      <p>{{ multiple }}</p>
+      <select v-model="multiple" multiple>
+        <option v-for="item in items">{{ item }}</option>
+      </select>
+
+      <hr />
+      <h2>v-model修飾子</h2>
+      <p>{{ text }}</p>
+      <p><strong>default</strong></p>
+      <input type="text" v-model="text" />
+      <p>
+        <strong>.lazy</strong>
+        <br />
+        input text要素であれば、blur
+      </p>
+      <input type="text" v-model.lazy="text" />
+      <p>
+        <strong>.trim</strong>
+        <br />
+        空白を削除
+      </p>
+      <input type="text" v-model.trim="text" />
+      <p>
+        <strong>.number</strong>
+        <br />
+        空白を削除
+        <br />
+        typeof: {{ typeof text }}
+        2倍する: {{ text * 2 }}
+      </p>
+      <input type="number" v-model.number="text" />
+
 
     </div>
 

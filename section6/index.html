@@ -9,7 +9,29 @@
   </head>
   <body>
     <div id="app">
-
+      <strong>computed</strong>
+      <p>{{ reversedText }}</p>
+      <hr>
+      <strong>methods</strong>
+      <p>{{ reversedTextMethod() }}</p>
+      <hr>
+      <strong>getter and setter</strong>
+      <p>base price: <input type="text" v-model="basePrice"></p>
+      <p>tax included price: <input type="text" v-model="taxIncludedPrice"></p>
+      <hr>
+      <strong>cache</strong>
+      <p>computed</p>
+      <ul>
+        <li>{{ computedNumber }}</li>
+        <li>{{ computedNumber }}</li>
+        <li>{{ computedNumber }}</li>
+      </ul>
+      <p>methods</p>
+      <ul>
+        <li>{{ methodNumber() }}</li>
+        <li>{{ methodNumber() }}</li>
+        <li>{{ methodNumber() }}</li>
+      </ul>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>

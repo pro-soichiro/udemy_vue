@@ -9,7 +9,10 @@
   </head>
   <body>
     <div id="app">
-
+      <button v-on:click="show = !show">button</button>
+      <transition name="fade">
+        <p v-show="show">hello transition</p>
+      </transition>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>

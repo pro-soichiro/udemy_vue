@@ -9,6 +9,24 @@
   </head>
   <body>
     <div id="app">
+      <p>{{ toggle ? "真" : "偽" }}</p>
+      <p v-if="toggle">真</p>
+      <p v-else>偽</p>
+      <button @click="onToggle">toggle</button>
+
+      <hr>
+      <p v-if="color === 'red'">Stop</p>
+      <p v-else-if="color === 'yellow'">cantion</p>
+      <p v-else-if="color === 'green'">Go</p>
+      <p v-else>other............</p>
+      <button @click="red">red</button>
+      <button @click="yellow">yellow</button>
+      <button @click="green">green</button>
+      <button @click="other">other</button>
+
+      <hr>
+      <button @click="showToggle">toggle</button>
+      <p v-show="show">v-show</p>
 
     </div>
 

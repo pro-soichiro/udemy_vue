@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Section9</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>hello <span class="bg-gray text-blue" v-bind:class="{ large: isLarge, error: hasError }">vue</span></p>
+      <button @click="toggle">toggle</button>
+      <button @click="errorBtn">error toggle</button>
+
+      <p v-bind:class="isLarge ? classObj : ''">三項演算子</p>
+
+      <h2>オブジェクトでクラスを定義する</h2>
+      <p v-bind:class="classObj">sample text</p>
+      <button @click="toggleObj">toggle</button>
+      <button @click="errorBtnObj">error toggle</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

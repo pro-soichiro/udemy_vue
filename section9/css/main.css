@@ -1,0 +1,15 @@
+.bg-gray {
+  background-color: gray;
+}
+
+.text-blue {
+  color: blue;
+}
+
+.large {
+  font-size: 36px;
+}
+
+.error {
+  color: red;
+}

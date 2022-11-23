@@ -9,6 +9,23 @@
   </head>
   <body>
     <div id="app">
+      <p>default: {{ message }}</p>
+      <button v-on:click="clickHandler">Click</button>
+      <hr>
+      <p v-once>v-once: {{ message }}</p>
+      <hr>
+      <p v-pre>v-pre: {{ message }}</p>
+      <hr>
+      <p>html: {{ messageHtml }}</p>
+      <p v-html="messageHtml">v-html: {{ messageHtml }}</p>
+      <hr>
+      <p v-cloak>v-cloak: {{ message }}</p>
+      <hr>
+      <p v-text="message"></p>
+      <hr>
+      <p>反転: {{ message.split('').reverse().join('') }}</p>
+      <p>計算: {{ number * 3 }}</p>
+      <p>三項演算子: {{ ok ? 'OKOK' : 'NG' }}</p>
 
     </div>
 

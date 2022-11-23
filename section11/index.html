@@ -9,6 +9,30 @@
   </head>
   <body>
     <div id="app">
+      <p>{{ count }}</p>
+
+      <!-- インラインイべントハンドラ -->
+      <button @click="count++">inline ++</button>
+
+      <!-- メソッドイベントハンドラ -->
+      <button @click="countUp">method ++</button>
+
+      <!-- イベントオブジェクトの取得 -->
+      <button @click="countEvent">0</button>
+
+      <!-- 引数を渡す -->
+      <button @click="countUpArg(2)">arg +2</button>
+      <button @click="countUpArg(3)">arg +3</button>
+
+      <!-- 引数とイベントオブジェクトを同時に受け取る方法 -->
+      <button @click="eventAndArg($event, 2)" id="eventAndArg">E & A</button>
+
+      <hr>
+      <!-- イベント修飾子 -->
+      <button v-on:click="printDate">print date</button>
+      <p>{{ date }}</p>
+      <button v-on:click.once="printDateOnce">print date once</button>
+      <p>{{ dateOnce }}</p>
 
     </div>
 

@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main.css">
-  <title>Section4</title>
-</head>
-<body>
-  <div id="app">
-    <p>{{ test }}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Section4</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>Todo List</h2>
 
-  <script src="https://unpkg.com/vue@3.1.5"></script>
-  <script src="js/main.js"></script>
-</body>
+      <!-- formタグを使用することでenterでinputの内容を追加できる -->
+      <form v-on:submit.prevent>
+        <input type="text" v-model="newTodo" />
+
+        <button v-on:click="addTodo">Add</button>
+      </form>
+      <ul>
+        <li v-for="(todo, index) in todos">
+
+          <!-- isDoneの値をcheckboxでバインディングできるようにする -->
+          <input type="checkbox" v-model="todo.isDone">
+
+
+          <!--
+
+            v-bind:class で動的にクラスの付与を切り替えられる
+
+            v-bind:class="{ class名: 条件 }"
+
+          -->
+          <span v-bind:class="{ done: todo.isDone }">{{ todo.item }}</span>
+
+          <!-- コールバックでなくてOK -->
+          <!-- <button v-on:click="()=> deleteTodo(index)">delete</button> -->
+
+          <button v-on:click="deleteTodo(index)">delete</button>
+        </li>
+      </ul>
+
+      <pre>{{ $data }}</pre>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

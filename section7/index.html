@@ -9,7 +9,53 @@
   </head>
   <body>
     <div id="app">
+      <p>{{ message }}</p>
+      <input type="text" v-model="message" />
 
+      <hr />
+
+      <label for="km">
+        <input id="km" type="number" v-model="km" />
+        km
+      </label>
+      <br />
+      <label for="m">
+        <input id="m" type="number" v-model="m" />
+        m
+      </label>
+    </div>
+    <hr />
+    <div id="app2">
+      <h2>例題</h2>
+      <h3>computed</h3>
+      <label for="lastName">last name</label>
+      <input type="text" id="lastName" v-model="lastName" />
+      <br />
+      <label for="firstName">first name</label>
+      <input type="text" id="firstName" v-model="firstName" />
+
+      <p>{{ fullName }}</p>
+
+      <hr />
+
+      <h3>watch</h3>
+      <label for="lastNameW">last name</label>
+      <input type="text" id="lastNameW" v-model="lastNameW" />
+      <br />
+      <label for="firstNameW">first name</label>
+      <input type="text" id="firstNameW" v-model="firstNameW" />
+
+      <p>{{ fullNameW }}</p>
+
+      <hr />
+    </div>
+
+    <h2>about deep option</h2>
+    <div id="app3">
+      <ul>
+        <li v-for="color in colors">{{ color.name }}</li>
+      </ul>
+      <button v-on:click="onClick">click</button>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
